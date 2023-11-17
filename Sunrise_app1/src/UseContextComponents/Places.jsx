@@ -29,6 +29,7 @@ const Places=()=>{
   const receivedArray=Selectplace(CityName);
 
   const update=receivedArray.filter(item => item !==fromloc);
+  
   const handleFromChange = ( value) => {
     setFromloc(value);
   };

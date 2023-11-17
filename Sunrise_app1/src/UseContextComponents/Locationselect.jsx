@@ -16,7 +16,7 @@ const Locationselect = ({ names, onSelectionChange }) => {
 
   return (
   <>
-      <FormControl sx={{ m: 1, minWidth: 180 }}>
+      <FormControl sx={{ m: 1, minWidth: 180, }}>
         <InputLabel>Select place</InputLabel>
         <Select name="city" onChange={handleSelectChange}>
         {

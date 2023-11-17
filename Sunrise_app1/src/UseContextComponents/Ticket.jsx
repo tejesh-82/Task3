@@ -2,6 +2,13 @@ import React from 'react'
 import { Selectplace } from './Places';
 import { global } from './Context';
 import { useContext } from 'react';
+
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { blue } from '@mui/material/colors';
+
 const Ticket = (props) => {
   const {fromloc,toloc}=props;  
 
@@ -29,9 +36,20 @@ const Ticket = (props) => {
   }
   return (
     <>
-      {
-        (price>0)?<p>{price}</p>:<p></p>
-      }
+     {
+      (price)?
+      <Card sx={{ minWidth: 190,marginTop:6,borderRadius:10 }}>
+        <CardContent sx={{ textAlign: 'center', }}>
+          <Typography variant="body2" sx={{backgroundColor:blue}}>
+            <p>Price</p>
+            {(price>0)?<p>{price}</p>:<p></p>}
+          </Typography>
+        </CardContent>
+      </Card>
+      :
+      <p></p>
+     }
+      
     </>
   )
 }
