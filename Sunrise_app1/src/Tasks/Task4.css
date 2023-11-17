@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+
+.container{
+  position: absolute;
+  top: 20%;
+  left: 80%;
+}
+
+.locations{
+  position: relative;
+  left: 50%;
+  top: 50%;
+}
+
+button{
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  transform: translate(-50%,-50%);
+}
+select{
+  background-color: rgb(83, 81, 81);
+  color: white;
+}
