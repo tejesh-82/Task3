@@ -3,11 +3,7 @@ import { useState } from 'react';
 import Selectplace from './Selectplace';
 const Ticket = (props) => {
   const {fromloc,toloc}=props;  
-
-  const [receivedArray, setReceivedArray] = useState([]);
-  const handleDataReceive = (newArray) => {
-    setReceivedArray(newArray);
-  };
+const receivedArray=Selectplace();
   let index1;
   let index2;
   for (let i=0;i<receivedArray.length;i++){
@@ -28,7 +24,6 @@ const Ticket = (props) => {
   }
   return (
     <>
-      <Selectplace onDataReceive={handleDataReceive} />
       {
         (price>0)?<p>{price}</p>:<p></p>
       }

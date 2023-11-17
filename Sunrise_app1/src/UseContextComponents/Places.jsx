@@ -9,11 +9,12 @@ const Places=()=>{
   const [fromloc,setFromloc]=useState();
   const [toloc,setToloc]=useState();
 
-  const [receivedArray, setReceivedArray] = useState([]);
-  const handleDataReceive = (newArray) => {
-    setReceivedArray(newArray);
-  };
+  // const [receivedArray, setReceivedArray] = useState([]);
+  // const handleDataReceive = (newArray) => {
+  //   setReceivedArray(newArray);
+  // };
 
+  const receivedArray=Selectplace();
 
   const handleFromChange = ( value) => {
     setFromloc(value);
@@ -23,7 +24,7 @@ const Places=()=>{
   };
 return(
     <>
-    <Selectplace onDataReceive={handleDataReceive} />
+    {/* <Selectplace onDataReceive={handleDataReceive} /> */}
 
     <h3>From:</h3><Locationselect names={receivedArray}  onSelectionChange={handleFromChange} /><br></br>
     
