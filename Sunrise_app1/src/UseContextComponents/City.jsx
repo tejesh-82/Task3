@@ -2,7 +2,8 @@
 import React, { useContext, useState } from 'react';
 import {global} from './Context';
 import '../Tasks/Task4.css'
-import Places from './Places';
+import {Places} from './Places';
+import Ticket from './Ticket';
 
 const City = () => {
   const [selectedCity, setSelectedCity] = useState('');
@@ -25,6 +26,7 @@ const City = () => {
 
     <global.Provider value={selectedCity}>
         <Places />
+        <Ticket />
     </global.Provider>
 
 </>

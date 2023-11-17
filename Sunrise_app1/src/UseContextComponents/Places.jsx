@@ -4,27 +4,39 @@ import  {global}  from "./Context";
 import Ticket from "./Ticket";
 import { useContext } from "react";
 import Locationselect from "./Locationselect";
-import Selectplace from "./Selectplace";
+
+const Selectplace = (CityName) => {
+  if(CityName=='hyderabad'){
+    return ['a','b','c'];
+  }
+  else if(CityName=='delhi'){
+    return ['x','y','z'];
+  }
+  else if(CityName=='chennai'){
+    return ['1','2','3'];
+  }
+  else{
+    return []
+  }
+}
 const Places=()=>{
   const [fromloc,setFromloc]=useState();
   const [toloc,setToloc]=useState();
+  
+  const CityName=useContext(global);
 
-  // const [receivedArray, setReceivedArray] = useState([]);
-  // const handleDataReceive = (newArray) => {
-  //   setReceivedArray(newArray);
-  // };
-
-  const receivedArray=Selectplace();
-
+  
+  const receivedArray=Selectplace(CityName);
+  
   const handleFromChange = ( value) => {
     setFromloc(value);
   };
   const handleToChange = ( value) => {
     setToloc(value);
   };
+
 return(
     <>
-    {/* <Selectplace onDataReceive={handleDataReceive} /> */}
 
     <h3>From:</h3><Locationselect names={receivedArray}  onSelectionChange={handleFromChange} /><br></br>
     
@@ -36,4 +48,4 @@ return(
 )
 
 }
-export default Places;
+export  {Places,Selectplace};

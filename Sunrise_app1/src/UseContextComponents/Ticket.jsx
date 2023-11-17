@@ -1,9 +1,14 @@
 import React from 'react'
-import { useState } from 'react';
-import Selectplace from './Selectplace';
+import { Selectplace } from './Places';
+import { global } from './Context';
+import { useContext } from 'react';
 const Ticket = (props) => {
   const {fromloc,toloc}=props;  
-const receivedArray=Selectplace();
+
+  const CityName=useContext(global); 
+  
+  const receivedArray=Selectplace(CityName);
+
   let index1;
   let index2;
   for (let i=0;i<receivedArray.length;i++){
