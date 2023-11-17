@@ -1,6 +1,10 @@
-
-
 import React, { useState } from 'react';
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 
 const Locationselect = ({ names, onSelectionChange }) => {
   const [selectedName, setSelectedName] = useState('');
@@ -11,16 +15,18 @@ const Locationselect = ({ names, onSelectionChange }) => {
   };
 
   return (
-    <div>   
-        <select name="place" onChange={handleSelectChange}>
-          <option value=''>select place</option>
-          {
+  <>
+      <FormControl sx={{ m: 1, minWidth: 180 }}>
+        <InputLabel>Select place</InputLabel>
+        <Select name="city" onChange={handleSelectChange}>
+        {
             names.map((element,index)=>{
-              return <option key={index} value={element}>{element}</option>
+              return <MenuItem value={element}>{element}</MenuItem>
             })
           }
-        </select>
-    </div>
+        </Select>
+      </FormControl>
+      </>
   );
 };
 

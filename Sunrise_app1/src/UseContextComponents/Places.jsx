@@ -27,7 +27,8 @@ const Places=()=>{
 
   
   const receivedArray=Selectplace(CityName);
-  
+
+  const update=receivedArray.filter(item => item !==fromloc);
   const handleFromChange = ( value) => {
     setFromloc(value);
   };
@@ -38,14 +39,18 @@ const Places=()=>{
 return(
     <>
 
-    <h3>From:</h3><Locationselect names={receivedArray}  onSelectionChange={handleFromChange} /><br></br>
+    <h3>From:</h3>{
+      (CityName)?<Locationselect names={receivedArray}  onSelectionChange={handleFromChange} />:<p></p>
+    }
     
-    <h3>To:</h3> <Locationselect  names={receivedArray} onSelectionChange={handleToChange} /><br />
+    <h3>To:</h3> {
+      (fromloc)?<Locationselect  names={update} onSelectionChange={handleToChange} />:<p></p>
+    }
 
     <Ticket fromloc={fromloc} toloc={toloc}/>
    
     </>
-)
+) 
 
 }
 export  {Places,Selectplace};
